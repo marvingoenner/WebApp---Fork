@@ -13,25 +13,29 @@ import edu.fra.uas.controller.BeanController;
 @SpringBootApplication
 public class BeanExampleApplication {
 
-	private static final Logger log = LoggerFactory.getLogger(BeanExampleApplication.class);
+    private static final Logger log = LoggerFactory.getLogger(BeanExampleApplication.class);
 
-	@Autowired
-	private BeanController beanController;
+    @Autowired
+    private BeanController beanController;
 
-	public static void main(String[] args) {
-		SpringApplication.run(BeanExampleApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(BeanExampleApplication.class, args);
+    }
 
-	@Bean
-	CommandLineRunner init() {
-		CommandLineRunner action = new CommandLineRunner() {
-			@Override
-			public void run(String... args) throws Exception {
-				log.debug(beanController.putMessage("Hello World"));
-				log.debug(beanController.putMessage("--> OOOHOOO <--"));
-			}
-		};
-		return action;
-	}
-
+    @Bean
+    CommandLineRunner init() {
+        CommandLineRunner action = new CommandLineRunner() {
+            @Override
+            public void run(String... args) throws Exception {
+                log.debug(beanController.putMessage("Hello World"));
+                log.debug(beanController.putMessage("--> OOOHOOO <--"));
+				log.debug(beanController.addNote(2.0));
+                log.debug(beanController.addNote(1.0));
+				log.debug(beanController.addNote(1.3));
+				log.debug(beanController.addNote(2.7));
+                log.debug(beanController.putMessage("Mein Schnitt: " + beanController.getSchnitt()));
+            }
+        };
+        return action;
+    }
 }
