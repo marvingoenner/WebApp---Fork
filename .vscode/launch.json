@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Notenmain",
+            "request": "launch",
+            "mainClass": "edu.fra.uas.Notenmain",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "notenmain",
+            "request": "launch",
+            "mainClass": "edu.fra.uas.notenmain",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "UserApplication",
             "request": "launch",
             "mainClass": "edu.fra.uas.UserApplication",
